@@ -2,7 +2,7 @@
 <ul>
 @foreach ($comments as $comment)
     <li>{{ $comment->content }}</li>
-    <button></button>
+    <button type="/comments/delete">Delete</button>
 @endforeach
 </ul>
 
