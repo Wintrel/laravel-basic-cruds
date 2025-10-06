@@ -28,6 +28,6 @@ class CommentController extends Controller
 
     public function delete($id){
         $comments = Comment::destroy($id);
-        return view("comments/delete");
+        return redirect("/comments");
     }
 }
