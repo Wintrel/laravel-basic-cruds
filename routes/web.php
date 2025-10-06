@@ -24,4 +24,5 @@ Route::get('/test', function (){
 
 Route::get('/comments', [CommentController::class, 'index']);
 Route::get('/comments/create', [CommentController::class, 'create']);
-Route::post('/comments', [CommentController::class, 'store']);
+Route::post('/comments/store', [CommentController::class, 'store']);
+Route::post('/comments/delete', [CommentController::class, 'delete']);

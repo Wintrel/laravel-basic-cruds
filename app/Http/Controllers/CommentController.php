@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Comment;
 
+use function PHPUnit\Framework\returnSelf;
+
 class CommentController extends Controller
 {
     public function index() {
@@ -13,7 +15,7 @@ class CommentController extends Controller
     }
 
     public function create() {
-        return "this has to return create form view";
+        return view("comments.create");
     }
 
     public function store(Request $request) {
@@ -21,8 +23,11 @@ class CommentController extends Controller
             'content' => $request["content"]
         ]);
 
-        return redirect('/comments/list');
+        return redirect('/comments');
     }
 
-    // delete functionality has to be implemented
+    public function delete($id){
+        $comments = Comment::destroy($id);
+        return view("comments/delete");
+    }
 }
